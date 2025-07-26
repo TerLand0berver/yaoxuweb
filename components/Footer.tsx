@@ -34,13 +34,19 @@ export default function Footer() {
             </p>
 
             <div className="flex space-x-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <a
+                href="https://work.weixin.qq.com/ca/cawcdee1a570ad5f72"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="button-primary"
               >
-                立即咨询
-              </motion.button>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  立即咨询
+                </motion.div>
+              </a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -62,15 +68,15 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-500" />
-                <span className="text-gray-300">contact@yaoxu.tech</span>
+                <span className="text-gray-300">info.yaoxu@iooxu.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary-500" />
-                <span className="text-gray-300">400-888-8888</span>
+                <span className="text-gray-300">17821146082</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-primary-500" />
-                <span className="text-gray-300">上海市浦东新区张江高科技园区</span>
+                <span className="text-gray-300">上海市宝山区逸仙路2816号1幢1层</span>
               </div>
             </div>
           </motion.div>
@@ -101,7 +107,7 @@ export default function Footer() {
           className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <p className="text-gray-400 text-sm">
-            © 2024 上海爻序科技有限公司. 保留所有权利.
+            © 2025 上海爻序科技有限公司. 保留所有权利.
           </p>
           
           <motion.button

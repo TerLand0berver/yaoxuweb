@@ -74,7 +74,7 @@ export default function About() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-200 leading-relaxed">
-                爻序科技成立于2020年，是一家专注于智能Agent技术的高新技术企业。我们致力于为中小企业提供一站式智能Agent部署解决方案，
+                爻序科技成立于2025年，是一家专注于智能Agent技术的高新技术企业。我们致力于为中小企业提供一站式智能Agent部署解决方案，
                 帮助企业快速实现数字化转型。
               </p>
               <p className="text-lg text-gray-200 leading-relaxed">

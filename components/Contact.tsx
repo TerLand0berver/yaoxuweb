@@ -7,19 +7,19 @@ const contactInfo = [
   {
     icon: Mail,
     title: "邮箱",
-    value: "contact@yaoxu.tech",
+    value: "info.yaoxu@iooxu.com",
     description: "商务合作、技术支持"
   },
   {
     icon: Phone,
     title: "电话",
-    value: "400-888-8888",
+    value: "17821146082",
     description: "7x24小时服务热线"
   },
   {
     icon: MapPin,
     title: "地址",
-    value: "上海市浦东新区张江高科技园区",
+    value: "上海市宝山区逸仙路2816号1幢1层",
     description: "总部地址"
   },
   {
@@ -200,20 +200,21 @@ export default function Contact() {
               viewport={{ once: true }}
               className="glass-effect p-6 rounded-2xl"
             >
-              <div className="flex items-center space-x-3 mb-4">
-                <MessageSquare className="w-6 h-6 text-accent-500" />
-                <h4 className="text-lg font-semibold text-white">在线客服</h4>
-              </div>
+              <h4 className="text-lg font-semibold text-white mb-2">在线客服</h4>
               <p className="text-gray-300 text-sm mb-4">
                 工作时间：周一至周五 9:00-18:00
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="button-secondary w-full"
+              <motion.a
+                href="https://work.weixin.qq.com/ca/cawcdee1a570ad5f72"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-primary w-full flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                开始在线对话
-              </motion.button>
+                <MessageSquare className="w-5 h-5" />
+                <span>开始在线对话</span>
+              </motion.a>
             </motion.div>
 
             {/* Office Hours */}
@@ -236,7 +237,7 @@ export default function Contact() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-300">紧急联系</span>
-                  <span className="text-white">400-888-8888</span>
+                  <span className="text-white">17821146082</span>
                 </div>
               </div>
             </motion.div>

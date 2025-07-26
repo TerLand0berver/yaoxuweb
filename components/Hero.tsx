@@ -102,7 +102,8 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative h-[600px]">
+            {/* Desktop view - 3D floating cards */}
+            <div className="hidden md:block relative h-[600px]">
               {/* Main Card */}
               <motion.div
                 animate={{ y: [0, -20, 0] }}
@@ -195,6 +196,102 @@ export default function Hero() {
                 </p>
                 <div className="flex items-center space-x-2 text-sm text-purple-400">
                   <TrendingUp className="w-4 h-4" />
+                  <span>转化率提升 300%</span>
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Mobile view - stacked cards */}
+            <div className="md:hidden space-y-6">
+              {/* Card 1 */}
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="glass-effect p-6 rounded-2xl w-full shadow-2xl"
+              >
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">智能数据融合</h3>
+                    <p className="text-xs text-gray-400">Data Fusion Platform</p>
+                  </div>
+                </div>
+                <div className="mb-3 overflow-hidden rounded-lg">
+                    <img
+                      src="/images/hero-card-data-fusion.webp"
+                      alt="智能数据融合"
+                      className="w-full h-32 object-cover"
+                    />
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                  多源数据整合，AI驱动的企业级数据解决方案，实现数据可控、可视、可用
+                </p>
+                <div className="flex items-center space-x-2 text-xs text-primary-400">
+                  <TrendingUp className="w-3 h-3" />
+                  <span>效率提升 89%</span>
+                </div>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="glass-effect p-6 rounded-2xl w-full shadow-2xl"
+              >
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-r from-accent-500 to-accent-600 rounded-xl flex items-center justify-center">
+                    <Users className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">业务流程Agent</h3>
+                    <p className="text-xs text-gray-400">Business Process Agent</p>
+                  </div>
+                </div>
+                <div className="mb-3 overflow-hidden rounded-lg">
+                    <img
+                      src="/images/hero-card-business-agent.webp"
+                      alt="业务流程Agent"
+                      className="w-full h-32 object-cover"
+                    />
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                  全链路智能在环，定制化业务自动化可视化Agent解决方案
+                </p>
+                <div className="flex items-center space-x-2 text-xs text-accent-400">
+                  <Award className="w-3 h-3" />
+                  <span>客户满意度 98%</span>
+                </div>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="glass-effect p-6 rounded-2xl w-full shadow-2xl"
+              >
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">市场洞察服务</h3>
+                    <p className="text-xs text-gray-400">Market Insight</p>
+                  </div>
+                </div>
+                <div className="mb-3 overflow-hidden rounded-lg">
+                    <img
+                      src="/images/hero-card-market-insight.webp"
+                      alt="市场洞察服务"
+                      className="w-full h-32 object-cover"
+                    />
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                  及时监控市场，助力营销高转化，竞品情报监控AI分析
+                </p>
+                <div className="flex items-center space-x-2 text-xs text-purple-400">
+                  <TrendingUp className="w-3 h-3" />
                   <span>转化率提升 300%</span>
                 </div>
               </motion.div>
