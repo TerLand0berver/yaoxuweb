@@ -1,125 +1,70 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const navLinks = [
+    { href: '#services', text: '解决方案' },
+    { href: '#cases', text: '客户案例' },
+    { href: '#about', text: '关于我们' },
+    { href: '#contact-section', text: '联系我们' },
+  ]
+
   return (
-    <footer id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-dark-800/50">
+    <footer id="footer" className="bg-surface border-t border-border py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2"
-          >
-            <div className="flex items-center space-x-2 mb-6">
-              <img src="/images/logo.webp" alt="爻序科技 Logo" className="w-10 h-10" />
-              <div>
-                <h3 className="text-2xl font-bold gradient-text">@爻序科技</h3>
-                <p className="text-sm text-gray-400">上海爻序科技有限公司</p>
-              </div>
+          <div className="md:col-span-1">
+            <div className="flex items-center space-x-2 mb-4">
+              <img src="/images/logo.webp" alt="爻序科技 Logo" className="w-8 h-8" />
+              <h3 className="text-xl font-bold text-text-primary">上海爻序科技有限公司</h3>
             </div>
-            
-            <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              爻序科技是一站式Agent部署解决方案平台，致力于帮助各行业企业快速构建、部署和运营智能Agent，
-              打造"零门槛、可定制、易操作"的智能交互平台。
+            <p className="text-text-secondary leading-relaxed">
+              我们致力于构建可靠、可控的智能体，驱动企业创新与增长。
             </p>
+          </div>
 
-            <div className="flex space-x-4">
-              <a
-                href="https://work.weixin.qq.com/ca/cawcdee1a570ad5f72"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button-primary"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  立即咨询
-                </motion.div>
-              </a>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="button-secondary"
-              >
-                预约演示
-              </motion.button>
-            </div>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-lg font-semibold text-white mb-6">联系我们</h4>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary-500" />
-                <span className="text-gray-300">info.yaoxu@iooxu.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-primary-500" />
-                <span className="text-gray-300">17821146082</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-primary-500" />
-                <span className="text-gray-300">上海市宝山区逸仙路2816号1幢1层</span>
+          {/* Links */}
+          <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <h4 className="text-lg font-semibold text-text-primary mb-4">导航</h4>
+              <div className="space-y-3">
+                {navLinks.map(link => (
+                  <a key={link.text} href={link.href} className="block text-text-secondary hover:text-accent transition-colors">{link.text}</a>
+                ))}
               </div>
             </div>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-lg font-semibold text-white mb-6">快速链接</h4>
-            <div className="space-y-3">
-              <a href="#home" className="block text-gray-300 hover:text-white transition-colors">首页</a>
-              <a href="#services" className="block text-gray-300 hover:text-white transition-colors">产品服务</a>
-              <a href="#cases" className="block text-gray-300 hover:text-white transition-colors">典型案例</a>
-              <a href="#contact" className="block text-gray-300 hover:text-white transition-colors">联系我们</a>
+            <div>
+              <h4 className="text-lg font-semibold text-text-primary mb-4">联系方式</h4>
+              <div className="space-y-3 text-text-secondary">
+                <p>info.yaoxu@iooxu.com</p>
+                <p>17821146082</p>
+                <p>上海市宝山区逸仙路2816号</p>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-text-secondary text-sm">
             © 2025 上海爻序科技有限公司. 保留所有权利.
           </p>
           
-          <motion.button
+          <button
             onClick={scrollToTop}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="mt-4 md:mt-0 w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center hover:from-primary-600 hover:to-primary-700 transition-all duration-300"
+            className="mt-4 sm:mt-0 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-text-secondary hover:bg-gray-200 transition-colors"
+            aria-label="返回顶部"
           >
-            <ArrowUp className="w-5 h-5 text-white" />
-          </motion.button>
-        </motion.div>
+            <ArrowUp className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </footer>
   )
-} 
+}

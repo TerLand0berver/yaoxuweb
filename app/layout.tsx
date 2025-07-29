@@ -1,8 +1,13 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Noto_Sans_SC } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const notoSansSC = Noto_Sans_SC({ 
+  subsets: ['latin'], 
+  variable: '--font-noto-sans-sc',
+  weight: ['300', '400', '500', '700', '900']
+})
 
 export const metadata: Metadata = {
   title: '爻序科技 - 智能Agent部署解决方案平台',
@@ -22,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh-CN">
-      <body className={inter.className}>
+    <html lang="zh-CN" className={`${inter.variable} ${notoSansSC.variable}`}>
+      <body className="font-sans font-noto-sans-sc">
         {children}
       </body>
     </html>
