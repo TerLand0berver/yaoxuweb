@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   description: '爻序科技是一站式Agent部署解决方案平台，致力于帮助各行业企业快速构建、部署和运营智能Agent，提供零门槛、可定制、易操作的智能交互平台。',
   keywords: '智能Agent, 企业智能化, 数据融合, 业务流程, 市场洞察, 数字化转型',
   authors: [{ name: '爻序科技' }],
+  icons: {
+    icon: [
+      { url: '/images/logo.webp', type: 'image/webp' }
+    ],
+    apple: [
+      { url: '/images/logo.webp', type: 'image/webp' }
+    ],
+  },
 }
 
 export const viewport: Viewport = {

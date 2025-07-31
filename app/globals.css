@@ -8,11 +8,72 @@
   }
   
   body {
-    @apply bg-background text-text-secondary;
+    @apply bg-background text-text-secondary font-sans antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight text-text-primary;
+  }
+  
+  /* Improved typography for Chinese content */
+  p {
+    @apply leading-relaxed;
+  }
+  
+  /* Proper spacing around punctuation */
+  .text-content {
+    @apply text-pretty;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    @apply bg-surface/80 backdrop-blur-lg border border-border/50;
+  }
+  
+  .card-elevated {
+    @apply bg-surface rounded-xl border border-border shadow-soft hover:shadow-strong transition-all duration-300 hover:border-accent/50;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-yellow-600 bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-accent to-yellow-700 text-white font-medium rounded-lg hover:from-accent-hover hover:to-yellow-800 transition-all duration-300 shadow-colored hover:shadow-glow transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-surface text-accent font-medium rounded-lg border border-accent/30 hover:bg-surface_alt hover:border-accent/50 transition-all duration-300;
+  }
+  
+  .hero-glow {
+    @apply absolute inset-0 bg-gradient-to-br from-accent/10 via-yellow-600/5 to-transparent;
+  }
+  
+  /* Anthropic-style utility classes */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  .bg-surface-subtle {
+    @apply bg-surface/80;
+  }
+  
+  .border-surface {
+    @apply border-border/50;
+  }
+  
+  .shadow-surface {
+    @apply shadow-soft;
+  }
+  
+  .hover-lift {
+    @apply hover:-translate-y-1 transition-transform duration-300;
   }
 }
 
@@ -20,4 +81,15 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-purple-600 bg-clip-text text-transparent;
+  }
 }
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');

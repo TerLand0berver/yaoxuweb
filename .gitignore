@@ -26,6 +26,7 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+/.claude
 
 # OS-generated files
 .DS_Store

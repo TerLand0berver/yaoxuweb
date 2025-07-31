@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { 
   Brain, 
   Database, 
@@ -56,34 +57,47 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-surface py-24 px-4 sm:px-6 lg:px-8">
+    <section id="features" className="relative bg-gradient-to-b from-surface_alt to-background py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-            技术架构与优势
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
+            技术架构与<span className="gradient-text">优势</span>
           </h2>
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            我们强大的技术架构与丰富的功能，为您的企业提供稳定、可靠且易于扩展的智能Agent服务。
+          <p className="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">
+            我们强大的技术架构与丰富的功能，为您的企业提供稳定、可靠且易于扩展的智能 Agent 服务。
           </p>
-        </div>
+        </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="text-center p-6 bg-background rounded-lg border border-border">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-surface border border-border rounded-xl p-6 hover:border-accent/50 transition-all duration-300 hover:shadow-medium"
+            >
               <div className="flex justify-center items-center mb-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-accent/10 to-yellow-600/10 rounded-lg flex items-center justify-center group-hover:from-accent/20 group-hover:to-yellow-600/20 transition-all duration-300">
                   <feature.icon className="w-6 h-6 text-accent" />
                 </div>
               </div>
-              <h3 className="text-lg font-semibold text-text-primary mb-2">
+              <h3 className="text-lg font-semibold text-text-primary mb-3 text-center">
                 {feature.title}
               </h3>
-              <p className="text-text-secondary text-sm leading-relaxed">
+              <p className="text-text-secondary text-sm leading-relaxed text-center">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
