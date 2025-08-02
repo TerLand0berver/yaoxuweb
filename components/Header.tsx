@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hasScrolled, setHasScrolled] = useState(false)
+  const [showContactImage, setShowContactImage] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,12 +56,12 @@ export default function Header() {
                 {link.text}
               </a>
             ))}
-            <a
-              href="#contact-section"
+            <button
+              onClick={() => setShowContactImage(true)}
               className="ml-6 px-4 py-2 bg-accent text-white rounded-md font-medium hover:bg-accent-hover transition-colors duration-200 text-sm"
             >
               联系我们
-            </a>
+            </button>
           </nav>
 
           {/* Mobile menu button */}
@@ -89,13 +90,33 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#contact-section"
-              onClick={handleLinkClick}
+              href="https://work.weixin.qq.com/u/vcccfb527234dd5e04?v=4.1.39.194962&bb=2dbfd4f3a6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full mt-2 text-center px-4 py-3 bg-accent text-white rounded-md hover:bg-accent-hover transition-colors"
             >
               联系我们
             </a>
           </nav>
+        </div>
+      )}
+
+      {/* Contact Image Modal */}
+      {showContactImage && (
+        <div className="fixed inset-0 z-50 flex items-start justify-end p-4 pt-20 pointer-events-none" onClick={() => setShowContactImage(false)}>
+          <div className="relative w-64 bg-white rounded-lg shadow-2xl pointer-events-auto" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setShowContactImage(false)}
+              className="absolute -top-2 -right-2 z-10 w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors"
+            >
+              <X className="w-3 h-3" />
+            </button>
+            <img 
+              src="https://s21.ax1x.com/2025/08/02/pVNggTf.jpg" 
+              alt="联系我们" 
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
         </div>
       )}
     </header>

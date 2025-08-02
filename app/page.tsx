@@ -9,6 +9,8 @@ import Features from '@/components/Features'
 import Cases from '@/components/Cases'
 import Team from '@/components/Team'
 import Contact from '@/components/Contact'
+import Practice from '@/components/Practice'
+import FloatingContact from '@/components/FloatingContact'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -20,6 +22,7 @@ export default function Home() {
       <Services />
       <Features />
       <Cases />
+      <Practice />
       <Team />
       <Contact />
       <Footer />
